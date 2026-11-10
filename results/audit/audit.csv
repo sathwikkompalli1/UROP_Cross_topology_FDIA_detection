@@ -1,0 +1,4 @@
+grid,rows,n_features,nan_cells,inf_cells,duplicate_rows,normal,attack,attack_share,attack_share_train,attack_share_val,attack_share_test,timestamp_monotonic,timestamp_unique,ts_start,ts_end,lag_copy_check
+5-bus,500000,36,0,0,0,200650,299350,0.5987,0.5999857142857142,0.59304,0.59836,True,True,2025-09-29 20:01:00,2026-09-12 01:20:00,True
+9-bus,500000,68,0,0,0,200071,299929,0.599858,0.60046,0.5985466666666667,0.59836,True,True,2025-09-29 19:52:00,2026-09-12 01:11:00,True
+14-bus,500000,132,0,0,0,200315,299685,0.59937,0.5991885714285714,0.6001733333333333,0.5994133333333334,True,True,2025-09-29 20:19:00,2026-09-12 01:38:00,True

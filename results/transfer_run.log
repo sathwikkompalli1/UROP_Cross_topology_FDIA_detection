@@ -1,0 +1,25 @@
+[main] 5-bus->9-bus feats=20 fit=60s BA@0.5=0.5563 FPR@0.5=0.5564 AUC=0.6210
+[main] 5-bus->14-bus feats=28 fit=77s BA@0.5=0.7874 FPR@0.5=0.0339 AUC=0.7993
+[main] 9-bus->5-bus feats=20 fit=78s BA@0.5=0.8452 FPR@0.5=0.0450 AUC=0.8614
+[main] 9-bus->14-bus feats=44 fit=122s BA@0.5=0.8346 FPR@0.5=0.0000 AUC=0.8371
+[main] 14-bus->5-bus feats=28 fit=92s BA@0.5=0.8772 FPR@0.5=0.0014 AUC=0.8787
+[main] 14-bus->9-bus feats=44 fit=159s BA@0.5=0.5623 FPR@0.5=0.8335 AUC=0.8123
+[ablation] 5-bus->9-bus feats=40 fit=52s BA@0.5=0.5299 FPR@0.5=0.9222 AUC=0.8705
+[ablation] 5-bus->14-bus feats=40 fit=52s BA@0.5=0.8715 FPR@0.5=0.0228 AUC=0.8830
+[ablation] 9-bus->5-bus feats=40 fit=78s BA@0.5=0.8802 FPR@0.5=0.0000 AUC=0.8814
+[ablation] 9-bus->14-bus feats=40 fit=78s BA@0.5=0.8800 FPR@0.5=0.0000 AUC=0.8816
+[ablation] 14-bus->5-bus feats=40 fit=54s BA@0.5=0.8803 FPR@0.5=0.0000 AUC=0.8830
+[ablation] 14-bus->9-bus feats=40 fit=54s BA@0.5=0.5722 FPR@0.5=0.8124 AUC=0.8773
+    mode source target  n_features  balanced_accuracy  recall    fpr  roc_auc
+    main  5-bus  9-bus          20             0.5563  0.6690 0.5564   0.6210
+    main  5-bus 14-bus          28             0.7874  0.6086 0.0339   0.7993
+    main  9-bus  5-bus          20             0.8452  0.7353 0.0450   0.8614
+    main  9-bus 14-bus          44             0.8346  0.6692 0.0000   0.8371
+    main 14-bus  5-bus          28             0.8772  0.7558 0.0014   0.8787
+    main 14-bus  9-bus          44             0.5623  0.9580 0.8335   0.8123
+ablation  5-bus  9-bus          40             0.5299  0.9820 0.9222   0.8705
+ablation  5-bus 14-bus          40             0.8715  0.7659 0.0228   0.8830
+ablation  9-bus  5-bus          40             0.8802  0.7603 0.0000   0.8814
+ablation  9-bus 14-bus          40             0.8800  0.7601 0.0000   0.8816
+ablation 14-bus  5-bus          40             0.8803  0.7606 0.0000   0.8830
+ablation 14-bus  9-bus          40             0.5722  0.9568 0.8124   0.8773

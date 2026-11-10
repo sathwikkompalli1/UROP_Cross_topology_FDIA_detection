@@ -1,0 +1,4 @@
+topology,rows_before,duplicate_rows_removed,rows_after,columns,missing_labels,normal_rows,attack_rows,remaining_exact_duplicate_rows,output_file
+5-bus,500000,0,500000,38,0,200650,299350,0,/content/fdia_final_results/measurements_5bus_final.csv
+9-bus,501216,1216,500000,70,0,200071,299929,0,/content/fdia_final_results/measurements_9bus_final.csv
+14-bus,500634,634,500000,134,0,200315,299685,0,/content/fdia_final_results/measurements_14bus_final.csv

@@ -1,0 +1,6 @@
+measurements_*.csv
+results/models/
+__pycache__/
+*.npz
+.pytest_cache/
+.superpowers/

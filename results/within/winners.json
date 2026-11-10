@@ -1,0 +1,29 @@
+{
+  "5-bus": {
+    "algo": "et",
+    "params": {
+      "n_estimators": 200,
+      "max_depth": null,
+      "min_samples_leaf": 5
+    },
+    "val_ba": 0.9004001978506228
+  },
+  "9-bus": {
+    "algo": "rf",
+    "params": {
+      "n_estimators": 200,
+      "max_depth": 20,
+      "min_samples_leaf": 1
+    },
+    "val_ba": 0.8993979234384493
+  },
+  "14-bus": {
+    "algo": "et",
+    "params": {
+      "n_estimators": 200,
+      "max_depth": null,
+      "min_samples_leaf": 5
+    },
+    "val_ba": 0.8996845355786106
+  }
+}

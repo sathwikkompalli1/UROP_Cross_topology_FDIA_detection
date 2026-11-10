@@ -1,0 +1,40 @@
+[tune] 9-bus rf {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 1} BA=0.8991 FPR=0.0014 61s
+[tune] 9-bus rf {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 5} BA=0.8991 FPR=0.0015 580s
+[tune] 9-bus rf {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 1} BA=0.8955 FPR=0.0106 148s
+[tune] 9-bus rf {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 5} BA=0.8989 FPR=0.0021 131s
+[tune] 9-bus et {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 1} BA=0.6452 FPR=0.0000 6s
+[tune] 9-bus et {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 5} BA=0.6337 FPR=0.0000 6s
+[tune] 9-bus et {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 1} BA=0.8917 FPR=0.0192 73s
+[tune] 9-bus et {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 5} BA=0.8958 FPR=0.0001 58s
+[tune] 9-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 6, 'subsample': 0.8} BA=0.8969 FPR=0.0068 11s
+[tune] 9-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 6, 'subsample': 1.0} BA=0.8986 FPR=0.0034 10s
+[tune] 9-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 10, 'subsample': 0.8} BA=0.8926 FPR=0.0181 24s
+[tune] 9-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 10, 'subsample': 1.0} BA=0.8948 FPR=0.0128 21s
+[final] 9-bus rf valBA=0.8994 168s
+[final] 9-bus et valBA=0.8974 169s
+[final] 9-bus xgb valBA=0.8992 19s
+[tune] 14-bus rf {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 1} BA=0.9006 FPR=0.0002 81s
+[tune] 14-bus rf {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 5} BA=0.9006 FPR=0.0001 82s
+[tune] 14-bus rf {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 1} BA=0.8993 FPR=0.0039 192s
+[tune] 14-bus rf {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 5} BA=0.9006 FPR=0.0003 196s
+[tune] 14-bus et {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 1} BA=0.6167 FPR=0.0000 8s
+[tune] 14-bus et {'n_estimators': 200, 'max_depth': 20, 'min_samples_leaf': 5} BA=0.6148 FPR=0.0000 8s
+[tune] 14-bus et {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 1} BA=0.8957 FPR=0.0128 108s
+[tune] 14-bus et {'n_estimators': 200, 'max_depth': None, 'min_samples_leaf': 5} BA=0.8981 FPR=0.0000 97s
+[tune] 14-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 6, 'subsample': 0.8} BA=0.8988 FPR=0.0042 18s
+[tune] 14-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 6, 'subsample': 1.0} BA=0.8998 FPR=0.0020 16s
+[tune] 14-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 10, 'subsample': 0.8} BA=0.8946 FPR=0.0148 43s
+[tune] 14-bus xgb {'n_estimators': 400, 'learning_rate': 0.1, 'max_depth': 10, 'subsample': 1.0} BA=0.8975 FPR=0.0079 43s
+[final] 14-bus rf valBA=0.9007 216s
+[final] 14-bus et valBA=0.8997 1088s
+[final] 14-bus xgb valBA=0.9007 29s
+  grid algo  val_balanced_accuracy  val_fpr  val_recall  test_balanced_accuracy  test_fpr  test_recall  test_roc_auc  train_sec  winner
+ 5-bus   rf                 0.9009   0.0005      0.8023                  0.8991    0.0002       0.7984        0.8983   120.7099   False
+ 5-bus   et                 0.9004   0.0000      0.8008                  0.8983    0.0000       0.7966        0.8990    94.6716    True
+ 5-bus  xgb                 0.9006   0.0011      0.8022                  0.8987    0.0012       0.7986        0.8999    14.2263   False
+ 9-bus   rf                 0.8994   0.0009      0.7997                  0.8997    0.0007       0.8002        0.8998   168.4641    True
+ 9-bus   et                 0.8974   0.0001      0.7950                  0.8972    0.0000       0.7945        0.8991   168.5322   False
+ 9-bus  xgb                 0.8992   0.0015      0.7998                  0.8994    0.0011       0.7999        0.9001    18.7724   False
+14-bus   rf                 0.9007   0.0001      0.8015                  0.8993    0.0001       0.7987        0.8996   216.1929   False
+14-bus   et                 0.8997   0.0000      0.7994                  0.8986    0.0000       0.7972        0.8989  1087.9620    True
+14-bus  xgb                 0.9007   0.0002      0.8015                  0.8991    0.0006       0.7989        0.8998    28.9441   False

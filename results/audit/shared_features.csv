@@ -1,0 +1,5 @@
+pair,n_shared,shared_bases
+5-bus <-> 9-bus,20,Flow_4_5 Inj_2 Inj_3 Inj_4 Inj_5
+5-bus <-> 14-bus,28,Flow_1_2 Flow_2_4 Flow_4_5 Inj_2 Inj_3 Inj_4 Inj_5
+9-bus <-> 14-bus,44,Flow_4_5 Flow_5_6 Flow_7_8 Inj_2 Inj_3 Inj_4 Inj_5 Inj_6 Inj_7 Inj_8 Inj_9
+all three,20,Flow_4_5 Inj_2 Inj_3 Inj_4 Inj_5
