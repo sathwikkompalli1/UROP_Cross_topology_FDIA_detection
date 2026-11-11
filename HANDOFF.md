@@ -12,8 +12,8 @@ trained on one grid works on another grid with no retraining (zero-shot transfer
 - Git: commit `b551e65` ("project") is pushed to `origin/main`
   (`github.com/sathwikkompalli1/UROP_Cross_topology_FDIA_detection`). It contains stages 01–04.
 - **Not committed yet:** `05_adapt.py`, `06_seeds.py`, `07_bootstrap.py`, `REPORT_EXTRA.md`, `results/extra/`,
-  this file, and additions to `fdia_common.py` + `tests/test_common.py`.
-- Existing results, figures, `REPORT.md` and `README.md` were not changed by the extra work.
+  this file, link edits in `README.md` + `REPORT.md`, and additions to `fdia_common.py` + `tests/test_common.py`.
+- Existing results and figures were not changed by the extra work. `REPORT.md` and `README.md` only gained links to `REPORT_EXTRA.md` (README test count 7 → 8).
   The additions to `fdia_common.py` are append-only; `make_model` gained an optional `seed` argument (default unchanged).
 - `.gitignore` blocks: the 3 data CSVs (~1.5 GB), `results/models/`, `*.npz`, caches, `.superpowers/`.
 - Tests: 8/8 passing (`python -m pytest tests -q`).
@@ -32,7 +32,7 @@ trained on one grid works on another grid with no retraining (zero-shot transfer
 | `tests/test_common.py` | Unit tests for `fdia_common.py` |
 | `REPORT.md` | Main results and analysis (read this first) |
 | `REPORT_EXTRA.md` | Seeds, bootstrap intervals, 9-bus fix |
-| `README.md` | Setup and run order (stages 01–04 only; does not mention 05–07 yet) |
+| `README.md` | Setup and run order (stages 01–04; links to `REPORT_EXTRA.md` for 05–07) |
 | `docs/superpowers/specs/…design.md` | Design decisions |
 | `docs/superpowers/plans/…md` | Implementation plan |
 | `FDIA_Final_Experiments.ipynb`, `final_cleaned_transfer_results.csv` | Earlier Colab baseline — "prior, not rerun" |
@@ -93,10 +93,9 @@ Transfers (ExtraTrees, threshold 0.5, target BA). Zero-shot = 5-seed mean; scale
 
 ## 7. Suggested next steps
 1. Commit and push the extra work (check `git status`: no `measurements_*.csv`, no `.npz`).
-2. Link `REPORT_EXTRA.md` from `README.md` and `REPORT.md`; add stages 05–07 to the README run order.
-3. Optional research: per-attack recall for within-grid models (cheap), then analyse the undetected attack
+2. Optional research: per-attack recall for within-grid models (cheap), then analyse the undetected attack
    types (e.g. state-estimation residual features).
-4. Optional: physically aligned / graph-aware features (per-unit values, GNN over the bus graph).
+3. Optional: physically aligned / graph-aware features (per-unit values, GNN over the bus graph).
 
 ## 8. Environment
 Python 3.13, pandas 3.0.5, numpy 2.5.2, scikit-learn 1.9.0, xgboost 3.4.1, matplotlib 3.11.1,

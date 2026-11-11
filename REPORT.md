@@ -1,5 +1,8 @@
 # Cross-Topology FDIA Detection — Results
 
+> **Follow-up:** [`REPORT_EXTRA.md`](REPORT_EXTRA.md) adds 5 seeds + bootstrap intervals and a label-free
+> per-grid scaling that fixes most transfers into 9-bus (not zero-shot). Numbers in this report are unchanged.
+
 All numbers below come from files in `results/`. "Prior" = earlier notebook (`final_cleaned_transfer_results.csv`), not rerun, different split and model.
 
 ## 1. Data (verified, `results/audit/`)
@@ -66,11 +69,11 @@ Target ROC-AUC: main 0.621 / 0.799 / 0.861 / 0.837 / 0.879 / 0.812; ablation 0.8
 - Synthetic data; attacks appear nearly per-row random (mean label run ≈ 1.2 rows), so temporal detection is not tested.
 - Small tuning budget (4 configs/algorithm, 150k-row sample). Transfer model fixed to ET by choice.
 - Only the threshold, not the model, is calibrated; calibration uses source data only by design.
-- Single seed; no confidence intervals.
+- Single seed; no confidence intervals. *(Addressed in [`REPORT_EXTRA.md`](REPORT_EXTRA.md) §1: seed std ≤ 0.01 BA.)*
 - Stealthy-attack hypothesis for types ≡ 0 (mod 5) is unverified.
 
 ## 7. Future work
-- **Per-grid scale normalisation from unlabeled target normal-period data** (e.g., z-score each feature per grid). The shift analysis suggests this targets the main failure — but it uses unlabeled target data, a transductive setting distinct from the zero-shot one here.
+- **Per-grid scale normalisation from unlabeled target normal-period data** (e.g., z-score each feature per grid). The shift analysis suggests this targets the main failure — but it uses unlabeled target data, a transductive setting distinct from the zero-shot one here. *(Done in [`REPORT_EXTRA.md`](REPORT_EXTRA.md) §2.)*
 - Physically aligned features (per-unit, graph/topology-aware features, or a GNN over the bus graph).
 - Residual-based features (state-estimation residuals) and analysis of the undetected attack types.
 - Multiple seeds and wider tuning; probability calibration (isotonic/Platt) on source validation.

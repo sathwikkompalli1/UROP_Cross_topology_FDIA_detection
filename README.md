@@ -1,7 +1,7 @@
 # Cross-Topology FDIA Detection
 
 Zero-shot transfer of false-data-injection-attack detectors between 5-, 9- and 14-bus grids.
-Findings: [`REPORT.md`](REPORT.md). Design: [`docs/superpowers/specs/2026-11-07-fdia-cross-topology-design.md`](docs/superpowers/specs/2026-11-07-fdia-cross-topology-design.md).
+Findings: [`REPORT.md`](REPORT.md). Follow-up (5 seeds, bootstrap intervals, 9-bus fix): [`REPORT_EXTRA.md`](REPORT_EXTRA.md). Design: [`docs/superpowers/specs/2026-11-07-fdia-cross-topology-design.md`](docs/superpowers/specs/2026-11-07-fdia-cross-topology-design.md).
 Plan: [`docs/superpowers/plans/2026-11-07-fdia-cross-topology.md`](docs/superpowers/plans/2026-11-07-fdia-cross-topology.md).
 
 ## Setup
@@ -14,13 +14,15 @@ Put the three data files in the repo root (not in git, ~1.5 GB):
 ## Run (in order)
 | Step | Command | Time* | Output |
 |---|---|---|---|
-| tests | `python -m pytest tests -q` | 5 s | 7 passing |
+| tests | `python -m pytest tests -q` | 5 s | 8 passing |
 | 1 audit | `python 01_audit.py` | 30 s | `results/audit/` |
 | 2 within-grid | `python 02_within.py [grid ...]` | ~1.5 h | `results/within/` (tuning, test, winners.json) |
 | 3 transfers | `python 03_transfer.py` | ~20 min | `results/transfer/transfer_metrics.csv`, `scores_*.npz` |
 | 4 thresholds | `python 04_thresholds.py` | ~5 min | `results/thresholds/`, `figures/` (48 PNGs) |
 
 *14 logical cores, 15.5 GB RAM. Seed 42 everywhere. Step 4 needs the `.npz` files from step 3 (gitignored).
+
+Extra stages `05_adapt.py`, `06_seeds.py`, `07_bootstrap.py` → `results/extra/`: see [`REPORT_EXTRA.md`](REPORT_EXTRA.md#reproduce).
 
 ## Outputs
 - `results/audit/audit.csv`, `shared_features.csv` — data checks, shared-column matrix.
