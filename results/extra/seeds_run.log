@@ -1,0 +1,74 @@
+[main seed=42] 5-bus->9-bus fit=57s BA@0.5=0.5563 FPR@0.5=0.5564 AUC=0.6210
+[main seed=42] 5-bus->14-bus fit=75s BA@0.5=0.7874 FPR@0.5=0.0339 AUC=0.7993
+[main seed=42] 9-bus->5-bus fit=104s BA@0.5=0.8452 FPR@0.5=0.0450 AUC=0.8614
+[main seed=42] 9-bus->14-bus fit=146s BA@0.5=0.8346 FPR@0.5=0.0000 AUC=0.8371
+[main seed=42] 14-bus->5-bus fit=114s BA@0.5=0.8772 FPR@0.5=0.0014 AUC=0.8787
+[main seed=42] 14-bus->9-bus fit=174s BA@0.5=0.5623 FPR@0.5=0.8335 AUC=0.8123
+[ablation seed=42] 5-bus->9-bus fit=58s BA@0.5=0.5299 FPR@0.5=0.9222 AUC=0.8705
+[ablation seed=42] 5-bus->14-bus fit=58s BA@0.5=0.8715 FPR@0.5=0.0228 AUC=0.8830
+[ablation seed=42] 9-bus->5-bus fit=55s BA@0.5=0.8802 FPR@0.5=0.0000 AUC=0.8814
+[ablation seed=42] 9-bus->14-bus fit=55s BA@0.5=0.8800 FPR@0.5=0.0000 AUC=0.8816
+[ablation seed=42] 14-bus->5-bus fit=55s BA@0.5=0.8803 FPR@0.5=0.0000 AUC=0.8830
+[ablation seed=42] 14-bus->9-bus fit=55s BA@0.5=0.5722 FPR@0.5=0.8124 AUC=0.8773
+[main seed=43] 5-bus->9-bus fit=75s BA@0.5=0.5580 FPR@0.5=0.5427 AUC=0.6213
+[main seed=43] 5-bus->14-bus fit=98s BA@0.5=0.7865 FPR@0.5=0.0376 AUC=0.7992
+[main seed=43] 9-bus->5-bus fit=93s BA@0.5=0.8436 FPR@0.5=0.0489 AUC=0.8613
+[main seed=43] 9-bus->14-bus fit=147s BA@0.5=0.8346 FPR@0.5=0.0000 AUC=0.8374
+[main seed=43] 14-bus->5-bus fit=110s BA@0.5=0.8771 FPR@0.5=0.0015 AUC=0.8787
+[main seed=43] 14-bus->9-bus fit=181s BA@0.5=0.5610 FPR@0.5=0.8374 AUC=0.8151
+[ablation seed=43] 5-bus->9-bus fit=62s BA@0.5=0.5297 FPR@0.5=0.9226 AUC=0.8619
+[ablation seed=43] 5-bus->14-bus fit=62s BA@0.5=0.8723 FPR@0.5=0.0208 AUC=0.8831
+[ablation seed=43] 9-bus->5-bus fit=56s BA@0.5=0.8802 FPR@0.5=0.0000 AUC=0.8821
+[ablation seed=43] 9-bus->14-bus fit=56s BA@0.5=0.8800 FPR@0.5=0.0000 AUC=0.8826
+[ablation seed=43] 14-bus->5-bus fit=56s BA@0.5=0.8803 FPR@0.5=0.0000 AUC=0.8830
+[ablation seed=43] 14-bus->9-bus fit=56s BA@0.5=0.5735 FPR@0.5=0.8096 AUC=0.8717
+[main seed=44] 5-bus->9-bus fit=66s BA@0.5=0.5580 FPR@0.5=0.5430 AUC=0.6207
+[main seed=44] 5-bus->14-bus fit=86s BA@0.5=0.7860 FPR@0.5=0.0381 AUC=0.7990
+[main seed=44] 9-bus->5-bus fit=82s BA@0.5=0.8438 FPR@0.5=0.0490 AUC=0.8615
+[main seed=44] 9-bus->14-bus fit=160s BA@0.5=0.8344 FPR@0.5=0.0000 AUC=0.8373
+[main seed=44] 14-bus->5-bus fit=93s BA@0.5=0.8770 FPR@0.5=0.0013 AUC=0.8784
+[main seed=44] 14-bus->9-bus fit=138s BA@0.5=0.5669 FPR@0.5=0.8211 AUC=0.8161
+[ablation seed=44] 5-bus->9-bus fit=53s BA@0.5=0.5317 FPR@0.5=0.9174 AUC=0.8482
+[ablation seed=44] 5-bus->14-bus fit=53s BA@0.5=0.8750 FPR@0.5=0.0138 AUC=0.8833
+[ablation seed=44] 9-bus->5-bus fit=51s BA@0.5=0.8802 FPR@0.5=0.0000 AUC=0.8814
+[ablation seed=44] 9-bus->14-bus fit=51s BA@0.5=0.8800 FPR@0.5=0.0000 AUC=0.8820
+[ablation seed=44] 14-bus->5-bus fit=51s BA@0.5=0.8803 FPR@0.5=0.0000 AUC=0.8834
+[ablation seed=44] 14-bus->9-bus fit=51s BA@0.5=0.5695 FPR@0.5=0.8193 AUC=0.8769
+[main seed=45] 5-bus->9-bus fit=67s BA@0.5=0.5552 FPR@0.5=0.5675 AUC=0.6194
+[main seed=45] 5-bus->14-bus fit=88s BA@0.5=0.7850 FPR@0.5=0.0423 AUC=0.7989
+[main seed=45] 9-bus->5-bus fit=77s BA@0.5=0.8445 FPR@0.5=0.0470 AUC=0.8613
+[main seed=45] 9-bus->14-bus fit=113s BA@0.5=0.8345 FPR@0.5=0.0000 AUC=0.8371
+[main seed=45] 14-bus->5-bus fit=86s BA@0.5=0.8772 FPR@0.5=0.0014 AUC=0.8783
+[main seed=45] 14-bus->9-bus fit=2033s BA@0.5=0.5687 FPR@0.5=0.8154 AUC=0.8171
+[ablation seed=45] 5-bus->9-bus fit=48s BA@0.5=0.5306 FPR@0.5=0.9199 AUC=0.8708
+[ablation seed=45] 5-bus->14-bus fit=48s BA@0.5=0.8753 FPR@0.5=0.0130 AUC=0.8833
+[ablation seed=45] 9-bus->5-bus fit=45s BA@0.5=0.8802 FPR@0.5=0.0000 AUC=0.8818
+[ablation seed=45] 9-bus->14-bus fit=45s BA@0.5=0.8800 FPR@0.5=0.0000 AUC=0.8822
+[ablation seed=45] 14-bus->5-bus fit=46s BA@0.5=0.8803 FPR@0.5=0.0000 AUC=0.8832
+[ablation seed=45] 14-bus->9-bus fit=46s BA@0.5=0.5718 FPR@0.5=0.8135 AUC=0.8712
+[main seed=46] 5-bus->9-bus fit=60s BA@0.5=0.5578 FPR@0.5=0.5447 AUC=0.6211
+[main seed=46] 5-bus->14-bus fit=74s BA@0.5=0.7865 FPR@0.5=0.0374 AUC=0.7991
+[main seed=46] 9-bus->5-bus fit=74s BA@0.5=0.8447 FPR@0.5=0.0462 AUC=0.8616
+[main seed=46] 9-bus->14-bus fit=23523s BA@0.5=0.8343 FPR@0.5=0.0000 AUC=0.8370
+[main seed=46] 14-bus->5-bus fit=115s BA@0.5=0.8771 FPR@0.5=0.0009 AUC=0.8785
+[main seed=46] 14-bus->9-bus fit=165s BA@0.5=0.5635 FPR@0.5=0.8288 AUC=0.8061
+[ablation seed=46] 5-bus->9-bus fit=59s BA@0.5=0.5318 FPR@0.5=0.9171 AUC=0.8452
+[ablation seed=46] 5-bus->14-bus fit=59s BA@0.5=0.8731 FPR@0.5=0.0187 AUC=0.8828
+[ablation seed=46] 9-bus->5-bus fit=57s BA@0.5=0.8802 FPR@0.5=0.0000 AUC=0.8815
+[ablation seed=46] 9-bus->14-bus fit=57s BA@0.5=0.8800 FPR@0.5=0.0000 AUC=0.8820
+[ablation seed=46] 14-bus->5-bus fit=57s BA@0.5=0.8803 FPR@0.5=0.0000 AUC=0.8834
+[ablation seed=46] 14-bus->9-bus fit=57s BA@0.5=0.5693 FPR@0.5=0.8198 AUC=0.8729
+seed-42 reproduction: max |BA diff| vs transfer_metrics.csv = 0.00e+00
+    mode source target  balanced_accuracy_mean  balanced_accuracy_std
+ablation 14-bus  5-bus                  0.8803                 0.0000
+ablation 14-bus  9-bus                  0.5713                 0.0018
+ablation  5-bus 14-bus                  0.8734                 0.0017
+ablation  5-bus  9-bus                  0.5308                 0.0010
+ablation  9-bus 14-bus                  0.8800                 0.0000
+ablation  9-bus  5-bus                  0.8802                 0.0000
+    main 14-bus  5-bus                  0.8771                 0.0001
+    main 14-bus  9-bus                  0.5645                 0.0033
+    main  5-bus 14-bus                  0.7863                 0.0008
+    main  5-bus  9-bus                  0.5570                 0.0013
+    main  9-bus 14-bus                  0.8345                 0.0001
+    main  9-bus  5-bus                  0.8444                 0.0006

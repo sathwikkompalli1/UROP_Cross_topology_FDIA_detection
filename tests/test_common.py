@@ -48,3 +48,12 @@ def test_thr_best_ba_fallback():
     y = np.array([0, 1])
     p = np.array([0.999, 0.999])
     assert 0 < thr_best_ba(p, y, 0.05) <= 0.99
+
+
+def test_robust_scale_ref_stats_and_zero_iqr():
+    from fdia_common import robust_scale
+    X = pd.DataFrame({"a": [1.0, 2.0, 3.0, 4.0, 5.0, 100.0], "b": [7.0] * 6})
+    ref = np.array([True] * 5 + [False])
+    S = robust_scale(X, ref)
+    assert S["a"].iloc[2] == 0 and S["a"].iloc[3] == 0.5  # median 3, IQR 2 from ref rows only
+    assert (S["b"] == 0).all() and np.isfinite(S.to_numpy()).all()  # constant column: IQR 0 -> 1, no inf

@@ -1,4 +1,5 @@
 """Shared helpers for the cross-topology FDIA experiments (see docs/superpowers/specs)."""
+import time
 from pathlib import Path
 
 import numpy as np
@@ -94,11 +95,49 @@ def thr_best_ba(p_val, y_val, max_fpr=0.05):
     return float(ts[np.flatnonzero(ok)[np.argmax(ba[ok])]])
 
 
-def make_model(algo, params):
+def make_model(algo, params, seed=SEED):
     if algo == "rf":
-        return RandomForestClassifier(**params, class_weight="balanced", random_state=SEED, n_jobs=-1)
+        return RandomForestClassifier(**params, class_weight="balanced", random_state=seed, n_jobs=-1)
     if algo == "et":
-        return ExtraTreesClassifier(**params, class_weight="balanced", random_state=SEED, n_jobs=-1)
+        return ExtraTreesClassifier(**params, class_weight="balanced", random_state=seed, n_jobs=-1)
     if algo == "xgb":
-        return XGBClassifier(**params, tree_method="hist", random_state=SEED, n_jobs=-1)
+        return XGBClassifier(**params, tree_method="hist", random_state=seed, n_jobs=-1)
     raise ValueError(algo)
+
+
+# ---- extra stages 05-07 (added after the main study; 01-04 do not use these) ----
+TRANSFER_ET = dict(n_estimators=200, max_depth=None, min_samples_leaf=5)  # same as 03_transfer.py
+
+
+def robust_scale(X, ref):
+    """(X - median) / IQR per column, stats from rows where boolean mask `ref` is True. IQR 0 -> 1."""
+    q1, med, q3 = np.quantile(X.to_numpy()[ref], [0.25, 0.5, 0.75], axis=0)
+    iqr = np.where(q3 - q1 > 0, q3 - q1, 1.0)
+    return ((X - med) / iqr).astype(np.float32)
+
+
+def run_transfers(X, agn, y, prefix="", seed=SEED, save_dir=None):
+    """Same 6 main + 3 ablation ExtraTrees fits as 03_transfer.py. X/agn/y: dicts keyed by grid. Returns metric rows."""
+    rows = []
+    jobs = [("main", s, [t], transfer_features(s, t)) for s, t in PAIRS] + \
+           [("ablation", s, [t for a, t in PAIRS if a == s], list(agn[s].columns)) for s in GRIDS]
+    for kind, src, tgts, cols in jobs:
+        F, mode = (agn if kind == "ablation" else X), prefix + kind
+        tr, va, _ = chrono_split(len(y[src]))
+        model = make_model("et", TRANSFER_ET, seed)
+        t0 = time.perf_counter()
+        model.fit(F[src].iloc[tr][cols], y[src][tr])
+        sec = time.perf_counter() - t0
+        p_val, y_val = model.predict_proba(F[src].iloc[va][cols])[:, 1], y[src][va]
+        thr = {"fixed_0.5": 0.5, "p95_normal": thr_p95(p_val, y_val), "best_ba_fpr5": thr_best_ba(p_val, y_val)}
+        for tgt in tgts:
+            p = model.predict_proba(F[tgt][cols])[:, 1]
+            if save_dir:
+                np.savez_compressed(save_dir / f"scores_{mode}_{src}_{tgt}.npz", p_val=p_val, y_val=y_val, p_tgt=p, y_tgt=y[tgt])
+            for name, t in thr.items():
+                rows.append(dict(mode=mode, seed=seed, source=src, target=tgt, n_features=len(cols), algo="et",
+                                 train_sec=sec, threshold_method=name, threshold=t, **metrics(y[tgt], p, t)))
+            m = metrics(y[tgt], p, 0.5)
+            print(f"[{mode} seed={seed}] {src}->{tgt} fit={sec:.0f}s BA@0.5={m['balanced_accuracy']:.4f} "
+                  f"FPR@0.5={m['fpr']:.4f} AUC={m['roc_auc']:.4f}", flush=True)
+    return rows

@@ -1,0 +1,37 @@
+                 mode source target  value  ci_low  ci_high
+             ablation 14-bus  5-bus 0.8803  0.8796   0.8810
+             ablation 14-bus  9-bus 0.5722  0.5713   0.5732
+             ablation  5-bus 14-bus 0.8715  0.8707   0.8724
+             ablation  5-bus  9-bus 0.5299  0.5293   0.5306
+             ablation  9-bus 14-bus 0.8800  0.8792   0.8808
+             ablation  9-bus  5-bus 0.8802  0.8794   0.8809
+                 main 14-bus  5-bus 0.8772  0.8764   0.8780
+                 main 14-bus  9-bus 0.5623  0.5614   0.5632
+                 main  5-bus 14-bus 0.7874  0.7864   0.7883
+                 main  5-bus  9-bus 0.5563  0.5549   0.5576
+                 main  9-bus 14-bus 0.8346  0.8338   0.8355
+                 main  9-bus  5-bus 0.8452  0.8442   0.8461
+  scaled_all_ablation 14-bus  5-bus 0.8803  0.8795   0.8810
+  scaled_all_ablation 14-bus  9-bus 0.8782  0.8774   0.8790
+  scaled_all_ablation  5-bus 14-bus 0.8802  0.8794   0.8810
+  scaled_all_ablation  5-bus  9-bus 0.8783  0.8775   0.8791
+  scaled_all_ablation  9-bus 14-bus 0.8802  0.8794   0.8810
+  scaled_all_ablation  9-bus  5-bus 0.8803  0.8795   0.8810
+      scaled_all_main 14-bus  5-bus 0.8768  0.8761   0.8776
+      scaled_all_main 14-bus  9-bus 0.8559  0.8551   0.8567
+      scaled_all_main  5-bus 14-bus 0.7967  0.7958   0.7976
+      scaled_all_main  5-bus  9-bus 0.6241  0.6233   0.6250
+      scaled_all_main  9-bus 14-bus 0.8263  0.8254   0.8273
+      scaled_all_main  9-bus  5-bus 0.8367  0.8357   0.8376
+scaled_clean_ablation 14-bus  5-bus 0.8801  0.8794   0.8808
+scaled_clean_ablation 14-bus  9-bus 0.8785  0.8778   0.8792
+scaled_clean_ablation  5-bus 14-bus 0.8802  0.8795   0.8810
+scaled_clean_ablation  5-bus  9-bus 0.8781  0.8774   0.8789
+scaled_clean_ablation  9-bus 14-bus 0.8802  0.8794   0.8810
+scaled_clean_ablation  9-bus  5-bus 0.8801  0.8793   0.8809
+    scaled_clean_main 14-bus  5-bus 0.8777  0.8770   0.8785
+    scaled_clean_main 14-bus  9-bus 0.8632  0.8624   0.8640
+    scaled_clean_main  5-bus 14-bus 0.7974  0.7965   0.7983
+    scaled_clean_main  5-bus  9-bus 0.6272  0.6264   0.6280
+    scaled_clean_main  9-bus 14-bus 0.8363  0.8355   0.8371
+    scaled_clean_main  9-bus  5-bus 0.8366  0.8356   0.8376
